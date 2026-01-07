@@ -1,0 +1,33 @@
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"> Log In </h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="./assets/logoBig.jpg" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password.</div>
+      <input type="text" id="login" name="username" [(ngModel)]="credentials.username"
+              class="fadeIn second" placeholder="User Name" required>
+      <!--<input type="text" id="login" class="fadeIn second" name="login" placeholder="login">-->
+      <input type="text" id="password" name="password" [(ngModel)]="credentials.password"
+              class="fadeIn third" placeholder="Password" required>
+      <!--<input type="text" id="password" class="fadeIn third" name="login" placeholder="password">-->
+      <br>
+      <button class="fadeIn fourth" type="submit" [disabled]="!loginForm.valid">Log in</button>
+      <!--<input type="submit" class="fadeIn fourth" value="Log In">-->
+    </form>
+
+    <!-- Remind Passowrd
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+    -->
+
+  </div>
+</div>

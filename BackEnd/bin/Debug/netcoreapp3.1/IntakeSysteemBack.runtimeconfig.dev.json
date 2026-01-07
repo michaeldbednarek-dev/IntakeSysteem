@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Drayma\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Drayma\\.nuget\\packages"
+    ]
+  }
+}

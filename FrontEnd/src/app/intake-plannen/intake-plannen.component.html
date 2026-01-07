@@ -1,0 +1,73 @@
+<div>
+  <!--<app-header></app-header>-->
+</div>
+<div toastContainer></div>
+
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Title -->
+        <h2 class="active"> Plan intake </h2>
+        <!-- New pokemon Form -->
+        <form #intakeForm="ngForm" (ngSubmit)="newIntake(intakeForm)">
+          <!--<div *ngIf="invalidLogin" clasfs="alert alert-danger">Invalid values.</div>-->
+
+
+          <input type="text" id="Name" name="Name" [(ngModel)]="intake.Name"
+                  class="fadeIn second" placeholder="Name" required>
+
+          <input type="date" ng-init="model=(myDate | date:'yyyy-MM-dd')" id="Date" name="Datum" [(ngModel)]="intake.Date"
+                  class="fadeIn second" placeholder="Datum" required>
+          <br>
+
+          <input type="time" id="startTime" name="Begint" [(ngModel)]="intake.startTime"
+                  class="fadeIn third" placeholder="Start om" required>
+
+          <input type="text" id="location" name="Locatie" [(ngModel)]="intake.location"
+                  class="fadeIn fourth" placeholder="Locatie" required>
+
+          <input type="text" id="CC" name="Aanwezige" [(ngModel)]="intake.CC"
+                  class="fadeIn fourth" placeholder="Aanwezige" required>
+
+          <select type="text" id="Color" name="Kleur" [(ngModel)]="intake.Color"
+                  class="fadeIn fourth" placeholder="Kleur" required>
+                  <option value=0 disabled>kleur</option>
+                  <option value=11 style="background-color: red;">Rood</option>
+                  <option value=2 style="background-color:green;">Groen</option>
+                  <option value=7 style="background-color:blue;">Blauw</option>
+                  <option value=5 style="background-color:yellow;">Geel</option>
+                  <option value=3 style="background-color:purple">Paars</option>
+                  <option value=8 style="background-color:gray">Grijs</option>
+          </select>
+
+
+          <br>
+          <button class="fadeIn fourth" type="submit  " [disabled]="!intakeForm.valid" >Plan intake</button>
+          <!--<input type="submit" class="fadeIn fourth" value="Log In">-->
+        </form>
+
+        <!-- Remind Passowrd
+        <div id="formFooter">
+          <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+        -->
+
+      </div>
+    </div>
+
+
+
+<!--
+                  <option value=0 disabled>kleur</option>
+                  <option value=11 style="background-color: red;">Rood</option>
+                  <option value=2 style="background-color:green;">Groen</option>
+                  <option value=7 style="background-color:blue;">Blauw</option>
+                  <option value=5 style="background-color:yellow;">Geel</option>
+                  <option value=3 style="background-color:purple">Paars</option>
+                  <option value=8 style="background-color:gray">Grijs</option>
+
+<ul>
+  <li><a routerLink="/customers">Customer</a></li>
+  <li *ngIf="!isUserAuthenticated()"><a routerLink="/login">Login</a></li>
+  <li *ngIf="isUserAuthenticated()"><a class="logout" (click)="logOut()">Log out</a></li>
+</ul>
+-->
